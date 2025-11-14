@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 220 25% 97%;
+    --foreground: 230 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 230 25% 15%;
+
+    --primary: 250 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 70% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 94%;
+    --muted-foreground: 230 15% 50%;
+
+    --accent: 280 80% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 145 65% 50%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 350 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 250 70% 60%;
+
+    --radius: 1rem;
+    
+    /* Quiz-specific design tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(250 70% 60%), hsl(280 80% 65%));
+    --gradient-secondary: linear-gradient(135deg, hsl(200 70% 55%), hsl(180 65% 50%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 60%), hsl(340 90% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(145 65% 50%), hsl(165 60% 50%));
+    
+    --shadow-glow: 0 0 30px -5px;
+    --shadow-card: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 230 30% 10%;
+    --foreground: 220 25% 95%;
+
+    --card: 230 25% 13%;
+    --card-foreground: 220 25% 95%;
+
+    --popover: 230 25% 13%;
+    --popover-foreground: 220 25% 95%;
+
+    --primary: 250 70% 65%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 230 20% 20%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 280 80% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --success: 145 65% 55%;
+    --success-foreground: 0 0% 100%;
+
+    --destructive: 350 85% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 230 20% 25%;
+    --input: 230 20% 25%;
+    --ring: 250 70% 65%;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+  
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+  
+  .glow-success {
+    box-shadow: var(--shadow-glow) hsl(var(--success) / 0.5);
+  }
+  
+  .glow-error {
+    box-shadow: var(--shadow-glow) hsl(var(--destructive) / 0.5);
+  }
+  
+  .card-shadow {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
