@@ -11,24 +11,13 @@ const Landing = () => {
   const quizState = getQuizState();
 
   useEffect(() => {
-    setVariant(Math.floor(Math.random() * 4));
+    setVariant(Math.floor(Math.random() * 3));
   }, []);
 
   const handleStartQuiz = () => {
     navigate("/quiz");
   };
  const variants = [
-    // Variant 1 — Warm Orange (best for Odia)
-    // {
-    //   background: "bg-gradient-to-br from-orange-400 via-amber-500 to-yellow-500",
-    //   icon: <Brain className="w-20 h-20 md:w-32 md:h-32 text-white/90 animate-pulse" />,
-    //   decoration: (
-    //     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    //       <div className="absolute top-20 left-10 w-28 h-28 bg-white/10 rounded-full blur-2xl animate-pulse" />
-    //       <div className="absolute bottom-20 right-10 w-36 h-36 bg-white/10 rounded-full blur-3xl" />
-    //     </div>
-    //   ),
-    // },
 
     // Variant 2 — Emerald Teal (calm, professional)
     {
@@ -90,7 +79,7 @@ const Landing = () => {
 
       <div className="w-full max-w-2xl relative z-10">
         <div className="text-center animate-fade-in">
-          <div className="mb-8 flex justify-center"><img src="./micc.png" className="w-72 " alt="Logo" /></div>
+          <div className="mb-8 flex justify-center"><img src="./micc.png" className="w-36 md:w-72 " alt="Logo" /></div>
 
           {/* MAIN TITLE — FIXED */}
           <h1 className="text-5xl md:text-7xl font-semibold text-white mb-4 drop-shadow-lg">

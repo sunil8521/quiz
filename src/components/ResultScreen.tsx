@@ -26,11 +26,11 @@ const ResultScreen = ({
   }, []);
 
   const getMessage = () => {
-    if (percentage === 100) return "Perfect Score! 🎯";
-    if (percentage >= 80) return "Excellent Work! 🌟";
-    if (percentage >= 60) return "Great Job! 👍";
-    if (percentage >= 40) return "Good Effort! 💪";
-    return "Keep Practicing! 📘";
+    if (percentage === 100) return "ଶତ ପ୍ରତିଶତ ଅଙ୍କ! 🎯";
+    if (percentage >= 80) return "ଅତ୍ୟନ୍ତ ଉତ୍କୃଷ୍ଟ! 🌟";
+    if (percentage >= 60) return "ଭଲ କାମ! 👍";
+    if (percentage >= 40) return "ଠିକ୍ ଚେଷ୍ଟା! 💪";
+    return "ଅଧିକ ଅଭ୍ୟାସ କରନ୍ତୁ! 📘";
   };
 
   const getIcon = () => {
@@ -70,7 +70,7 @@ const ResultScreen = ({
           {getMessage()}
         </h1>
         <p className="text-sm sm:text-base text-gray-500 mb-6">
-          You’ve completed this round of questions.
+          ଆପଣ ଏହି ପ୍ରଶ୍ନ ସେଟ୍ ସମାପ୍ତ କରିଛନ୍ତି।
         </p>
 
         <div className="bg-gray-50 rounded-xl py-5 mb-6 border border-gray-100">
@@ -79,15 +79,16 @@ const ResultScreen = ({
               {score}
             </div>
             <div className="text-sm sm:text-base text-gray-500 self-end">
-              out of {totalQuestions}
+              / {totalQuestions}
             </div>
           </div>
 
           <div className="mt-4 mx-8">
             <div className="flex items-center justify-between mb-2">
-              <div className="text-sm text-gray-600 font-medium">Score</div>
+              <div className="text-sm text-gray-600 font-medium">Total</div>
               <div className="text-sm font-semibold text-blue-600">{percentage}%</div>
             </div>
+
             <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
               <div
                 className={`h-3 rounded-full transition-all duration-700 ${
@@ -109,11 +110,11 @@ const ResultScreen = ({
 
         <div className="mb-6 text-gray-600">
           <p className="text-sm">
-            <span className="font-semibold text-gray-800">Student #{studentNumber}</span>{" "}
-            completed
+            <span className="font-semibold text-gray-800">ପ୍ରତିଯୋଗୀ #{studentNumber}</span>{" "}
+            ସମାପ୍ତ କରିଛନ୍ତି
           </p>
           <p className="text-xs sm:text-sm mt-1">
-            Total students completed:{" "}
+            ମୋଟ ସମାପ୍ତ କରିଥିବା ପ୍ରତିଯୋଗୀ:{" "}
             <span className="font-semibold text-gray-800">{completedStudents}</span>
           </p>
         </div>
@@ -123,11 +124,11 @@ const ResultScreen = ({
           size="lg"
           className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold text-lg py-3 rounded-xl hover:from-blue-700 hover:to-blue-800 transition-all shadow-md"
         >
-          Next Student — Start Next Round
+          ପରବର୍ତ୍ତୀ ପ୍ରତିଯୋଗୀ — ନୂତନ ରାଉଣ୍ଡ ଆରମ୍ଭ କରନ୍ତୁ
         </Button>
 
         <p className="mt-4 text-xs text-gray-400">
-          Tip: Use the Next button to quickly move to the next student's round.
+          ସୁଚନା: ପରବର୍ତ୍ତୀ ପ୍ରତିଯୋଗୀ ପାଇଁ Next ବଟନ୍ ଦବାନ୍ତୁ।
         </p>
       </div>
     </div>
