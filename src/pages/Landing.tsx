@@ -5,6 +5,8 @@ import { getQuizState } from "@/utils/localStorageUtils";
 import { Brain, Sparkles, Zap } from "lucide-react";
 import { Flame, Gem, CloudLightning, Rainbow, Mountain } from "lucide-react";
 import { Mic } from "lucide-react"; //
+import { RotateCcw } from "lucide-react";
+
 const Landing = () => {
   const navigate = useNavigate();
   const [variant, setVariant] = useState(0);
@@ -17,12 +19,13 @@ const Landing = () => {
   const handleStartQuiz = () => {
     navigate("/quiz");
   };
- const variants = [
-
+  const variants = [
     // Variant 2 — Emerald Teal (calm, professional)
     {
       background: "bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500",
-      icon: <Gem className="w-20 h-20 md:w-32 md:h-32 text-white/90 animate-pulse" />,
+      icon: (
+        <Gem className="w-20 h-20 md:w-32 md:h-32 text-white/90 animate-pulse" />
+      ),
       decoration: (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-10 left-14 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
@@ -34,7 +37,9 @@ const Landing = () => {
     // Variant 3 — Blue → Sky (clean modern)
     {
       background: "bg-gradient-to-br from-blue-700 via-blue-500 to-sky-400",
-      icon: <Zap className="w-20 h-20 md:w-32 md:h-32 text-white/90 animate-pulse" />,
+      icon: (
+        <Zap className="w-20 h-20 md:w-32 md:h-32 text-white/90 animate-pulse" />
+      ),
       decoration: (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 left-1/3 w-56 h-56 bg-white/10 rounded-full blur-3xl" />
@@ -45,8 +50,11 @@ const Landing = () => {
 
     // Variant 4 — Indigo Violet (serious quiz theme)
     {
-      background: "bg-gradient-to-br from-indigo-900 via-purple-700 to-violet-900",
-      icon: <Mountain className="w-20 h-20 md:w-32 md:h-32 text-indigo-200 animate-pulse" />,
+      background:
+        "bg-gradient-to-br from-indigo-900 via-purple-700 to-violet-900",
+      icon: (
+        <Mountain className="w-20 h-20 md:w-32 md:h-32 text-indigo-200 animate-pulse" />
+      ),
       decoration: (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl animate-pulse" />
@@ -58,7 +66,9 @@ const Landing = () => {
     // Variant 5 — Crystal Blue (subtle + clean)
     {
       background: "bg-gradient-to-br from-sky-300 via-indigo-400 to-violet-500",
-      icon: <CloudLightning className="w-20 h-20 md:w-32 md:h-32 text-white/90 animate-pulse" />,
+      icon: (
+        <CloudLightning className="w-20 h-20 md:w-32 md:h-32 text-white/90 animate-pulse" />
+      ),
       decoration: (
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-8 w-32 h-32 bg-white/20 rounded-full blur-2xl animate-pulse" />
@@ -67,7 +77,6 @@ const Landing = () => {
       ),
     },
   ];
-
 
   const currentVariant = variants[variant];
 
@@ -79,7 +88,9 @@ const Landing = () => {
 
       <div className="w-full max-w-2xl relative z-10">
         <div className="text-center animate-fade-in">
-          <div className="mb-8 flex justify-center"><img src="./micc.png" className="w-36 md:w-72 " alt="Logo" /></div>
+          <div className="mb-8 flex justify-center">
+            <img src="./micc.png" className="w-36 md:w-72 " alt="Logo" />
+          </div>
 
           {/* MAIN TITLE — FIXED */}
           <h1 className="text-5xl md:text-7xl font-semibold text-white mb-4 drop-shadow-lg">
@@ -91,11 +102,13 @@ const Landing = () => {
             ମିଳିତ ସାମ୍ବାଦିକ ସଂଘ, ଜଳେଶ୍ୱର — ଜାତୀୟ ପ୍ରେସ୍ ଦିବସ କୁଇଜ୍
           </p>
 
-                   <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 mb-8 border border-white/20">
+          <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 mb-8 border border-white/20">
             <p className="text-3xl md:text-4xl font-semibold text-white mb-2">
               ପ୍ରତିଯୋଗିତା #{quizState.currentStudent}
             </p>
-            <p className="text-white/80 text-lg">10ଟି ରୋଚକ ପ୍ରଶ୍ନ ପାଇଁ ପ୍ରସ୍ତୁତ କି?</p>
+            <p className="text-white/80 text-lg">
+              10ଟି ରୋଚକ ପ୍ରଶ୍ନ ପାଇଁ ପ୍ରସ୍ତୁତ କି?
+            </p>
           </div>
 
           <Button
@@ -111,10 +124,17 @@ const Landing = () => {
               {quizState.completedStudents} ଜଣ ଛାତ୍ର ସମାପ୍ତ କରିଛନ୍ତି
             </p>
           )}
-
-          
         </div>
       </div>
+      <button
+        onClick={() => {
+          localStorage.clear();
+          window.location.reload();
+        }}
+        className="absolute top-4 right-4 p-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-xl border border-white/30 shadow-lg transition-all duration-300 active:scale-90"
+      >
+        <RotateCcw className="w-4 h-4 text-white" />
+      </button>
     </div>
   );
 };
