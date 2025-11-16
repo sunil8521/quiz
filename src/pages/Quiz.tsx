@@ -9,6 +9,8 @@ import {
   addStudentScore, 
   advanceToNextStudent 
 } from "@/utils/localStorageUtils";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const QUESTIONS_PER_STUDENT = 10;
 
@@ -116,22 +118,36 @@ const Quiz = () => {
           onAnswer={handleAnswer}
         />
 
-        <div className="flex justify-between mt-6">
-          <button
-            onClick={goPrev}
-            disabled={currentQuestionIndex === 0}
-            className="px-4 py-2 bg-gray-200 rounded-lg disabled:opacity-50"
-          >
-            Previous
-          </button>
+     
 
-          <button
-            onClick={goNext}
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg"
-          >
-            Next
-          </button>
-        </div>
+
+     <div className="flex justify-between mt-8">
+
+  {/* Previous Button */}
+  <button
+    onClick={goPrev}
+    disabled={currentQuestionIndex === 0}
+    className={cn(
+      "flex items-center gap-2 px-6 py-3 rounded-xl text-lg font-semibold border transition-all",
+      currentQuestionIndex === 0
+        ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+        : "bg-white text-gray-800 hover:bg-gray-100 active:scale-95"
+    )}
+  >
+    <ChevronLeft size={22} />
+    Previous
+  </button>
+
+  {/* Next Button */}
+  <button
+    onClick={goNext}
+    className="flex items-center gap-2 px-6 py-3 rounded-xl text-lg font-semibold bg-blue-600 text-white hover:bg-blue-700 active:scale-95 transition-all"
+  >
+    Next
+    <ChevronRight size={22} />
+  </button>
+
+</div>
       </div>
     </div>
   );
