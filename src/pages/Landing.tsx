@@ -82,7 +82,7 @@ const Landing = () => {
 
   return (
     <div
-      className={`min-h-screen flex items-center justify-center p-4 relative ${currentVariant.background}`}
+      className={`min-h-[100dvh] flex items-center justify-center p-4 relative ${currentVariant.background}`}
     >
       {currentVariant.decoration}
 
