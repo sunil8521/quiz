@@ -93,7 +93,7 @@ const Landing = () => {
 
                    <div className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 mb-8 border border-white/20">
             <p className="text-3xl md:text-4xl font-semibold text-white mb-2">
-              ପ୍ରତୀଯୋଗୀ #{quizState.currentStudent}
+              ପ୍ରତିଯୋଗିତା #{quizState.currentStudent}
             </p>
             <p className="text-white/80 text-lg">10ଟି ରୋଚକ ପ୍ରଶ୍ନ ପାଇଁ ପ୍ରସ୍ତୁତ କି?</p>
           </div>
